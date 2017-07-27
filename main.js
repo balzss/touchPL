@@ -330,7 +330,11 @@ var app = new Vue({
 
 var editor = ace.edit("editor");
 editor.on("input", function () {
-    app.$data.astBody = acorn.parse(editor.getValue());
+    try {
+        app.$data.astBody = acorn.parse(editor.getValue());
+    } catch (error) {
+        console.log('error');
+    }
 });
 editor.setTheme("ace/theme/chrome");
 
@@ -349,3 +353,28 @@ editor.setValue(`for (var i = 1; i <= 20; i++) {
 editor.getSession().setUseWorker(false);
 editor.setHighlightActiveLine(false);
 
+var textWhy = `<h1>Why?</h1><p>
+This is the first part of my work-in-progress touch based code editor/IDE. It's a visual syntax for JavaScript.</p>
+<p>The goal is a code editing environment where the creation and the manipulation of the code is done through a touchscreen on a vertically oriented device (usually smartphone).</p>
+<p>The majority of this project only exists in conceptual form but I needed some feedback on the visual representation so I created this demo sandbox.
+<p>The syntax implements almost all the ES5 features with the exception of: debugger statement, labeled statement, exceptions, do while loop and sequence expression.
+<p>Please consider trying it out and giving your thougths, feedback, ideas or critiques <a href="#">here</a>.</p>`;
+
+var textHow = `<h1>How?</h1><p>
+Mostly with black magic and vim.
+</p>`;
+
+function slide(text) {
+    document.getElementById('devices').style.transform = "translateX(-100%)";
+    var info = document.getElementById('info');
+    info.innerHTML = `
+<h2 class="info-title" onclick="back()"><i class="material-icons" style="font-size: 20px; padding: 12px 4px 4px 4px;">arrow_back</i>Back to the demo</h2>
+` + text;
+    info.style.transform = "translateX(0)";
+}
+
+function back() {
+    document.getElementById('devices').style.transform = "translateX(0)";
+    var info = document.getElementById('info');
+    info.style.transform = "translateX(100%)";
+}

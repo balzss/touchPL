@@ -6,12 +6,13 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 .phone {
   margin: 16px;
-  width: 45vh;
-  height: 80vh;
+  width: 20vw;
+  height: 35vw;
   border-radius: 3px;
   background-color: #f5f5f5;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -36,7 +37,7 @@ body {
 background-image: url("https://i.stack.imgur.com/9Qwwt.png");
 background-size: cover;
 background-position: center; 
-height: 28px;
+height: 32px;
 width: 100%;
 }
 
@@ -53,7 +54,7 @@ width: 100%;
 }
 
 main {
-  overflow: auto;
+  overflow-y: scroll;
   width: 100%;
   height: 100%;
   padding-right: 16px;
@@ -70,10 +71,9 @@ main {
     display: flex;
     flex-direction: column;
   background-color: white;
-  height: 80vh;
+  height: 35vw;
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  width: 110vh;
   margin: 16px;
   
 }
@@ -116,11 +116,12 @@ main {
 .devices {
     padding: 16px;
     box-sizing: border-box;
-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100%;
+    transition: all 0.4s ease-in-out;
 }
 
 .icons > .close {
@@ -129,22 +130,21 @@ width: 100%;
     height: 0.7rem;
     border-radius: 50%;
     background-color: #fc5753;
-    /*border: 1px solid #df4744;*/
 }
+
 .icons > .incr {
     margin-right: 6px;
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 50%;
     background-color: #fdbc40;
-    /*border: 1px solid #de9f34;*/
 }
+
 .icons > .hhide {
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 50%;
     background-color: #33c748;
-    /*border: 1px solid #27aa35;*/
 }
 
 .icons {
@@ -152,20 +152,21 @@ width: 100%;
 }
 
 .sidebar {
+    z-index: 1;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
-    width: 55vh;
     background-color: #546E7A;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  color: #f5f5f5;
-  font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color: #f5f5f5;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .sidebar > .title {
-text-align: center;
-padding: 12px;
+    text-align: center;
+    padding: 12px;
 }
 
 .sidebar > .title > p {
@@ -183,31 +184,53 @@ padding: 12px;
     cursor: pointer;
     padding: 12px;
     margin: 10px 24px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .container {
     display: flex;
     align-items: center;
     height: 100%;
-width: 100%;
+    width: 100%;
 }
 
 .footnote {
     text-align: center;
     font-size: 0.7rem;
-    opacity: 0.6;
+    opacity: 0.7;
     margin-top: auto;
     padding: 24px;
 }
 
-textarea {
- resize: none;
- height: 100%;
- width: 100%;
-     border: 1px solid red;
-    overflow: auto;
-    outline: none;
-    box-shadow: none;
+#info {
+    color: 424242;
+    font-family: 'Open Sans', sans-serif;
+    padding: 24px 64px;
+    position: absolute;
+    top: 0;
+    left: 20vw;
+    right: 0;
+    padding-right: 30vw;
+    bottom: 0;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+}
+
+#info a {
+    color: inherit;
+}
+#info > p {
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.info-title:hover {
+    text-decoration: underline;
+}
+
+.info-title {
+    font-size: 26px;
+    opacity: 0.4;
+    cursor: pointer;
 }

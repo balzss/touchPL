@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>touchPL demo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tpl.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,16 +19,16 @@
         <div class="sidebar">
 
             <div class="title">
-                <h1>touchPL</h1>
+                <h1 onclick="back()" style="cursor: pointer">touchPL</h1>
                 <p>visual syntax optimized for displaying source code on handheld devices</p>
             </div>
-            <div class="side-item">why?</div>
-            <div class="side-item">how?</div>
+            <div class="side-item" onclick="slide(textWhy)">why?</div>
+            <div class="side-item" onclick="slide(textHow)">how?</div>
             <div class="side-item">feedback</div>
             <div class="side-item">github</div>
             <div class="footnote">Licensed under the GPLv3 <br>Copyright © 2017 Balazs Saros</div>
         </div>
-        <div class="devices">
+        <div class="devices" id="devices">
             <div class="desktop">
                 <div class="dheader">
                     <div class="icons">
@@ -58,6 +58,7 @@
             </div>
         </div>
     </div>
+    <div id="info"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/acorn/5.1.1/acorn.min.js"></script>
