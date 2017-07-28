@@ -220,9 +220,9 @@ main {
 #info a {
     color: inherit;
 }
-#info > p {
-    font-size: 22px;
-    line-height: 32px;
+#info > p, #info li {
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .info-title:hover {
