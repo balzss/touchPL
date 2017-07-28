@@ -229,7 +229,7 @@ main {
 #info {
     color: 424242;
     font-family: 'Open Sans', sans-serif;
-    padding: 24px 64px;
+    padding: 0 64px;
     position: absolute;
     top: 0;
     left: 20vw;
@@ -244,8 +244,8 @@ main {
     color: inherit;
 }
 #info > p, #info li {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 1rem;
+    line-height: 1.6rem;
 }
 
 .info-title:hover {
@@ -253,7 +253,7 @@ main {
 }
 
 .info-title {
-    font-size: 26px;
+    font-size: 20px;
     opacity: 0.4;
     cursor: pointer;
 }
