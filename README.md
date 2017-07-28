@@ -1,6 +1,7 @@
 # touchPL
 Visual syntax optimized for displaying source code on handheld devices. Try it out [here](https://balzss.github.io/touchPL/).
-[Imgur](http://i.imgur.com/WAbkBOy.gif)
+
+![Imgur](http://i.imgur.com/WAbkBOy.gif)
 
 ## Why?
 This is the first part of my work-in-progress touch based code editor/IDE. It's a visual syntax for JavaScript.
