@@ -103,7 +103,7 @@ input:focus {
     position: fixed;
     top: 195px;
     right: 25px;
-    font-align: center;
+    text-align: center;
     line-height: 50px;
     background-color: #ddd;
     color: #999;
@@ -226,4 +226,20 @@ button {
 }
 .computed > div{
     margin: 0 !important;
+}
+
+.brown {
+background-color: #D7CCC8;
+}
+
+.orange {
+    background-color: #FFE0B2;
+}
+
+.green {
+    background-color: #CCFF90;
+}
+
+.cyan {
+    background-color: #84FFFF;
 }

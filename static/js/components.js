@@ -74,7 +74,7 @@ Vue.component('CallExpression', {
     props: ['props'],
     template: '<div>' +
     '<component v-if="this.isME()" :is="props.callee.object.type" :props="props.callee.object"/>' +
-    '<div class="header card blue" :class="{ chain: isME()}" data-name="FnCall">' +
+    '<div class="header card blue" :class="{ chain: isME()}" >' +
     // '<ExpressionStatement v-if="props.callee.type == \'FunctionExpression\'" :props="props.callee"></ExpressionStatement>' +
     '<div >{{ this.getName() }}</div>' +
     '<component :is="a.type" v-for="a in props.arguments" :props="a"/>' +
@@ -89,7 +89,7 @@ Vue.component('CallExpression', {
 
 Vue.component('FunctionExpression', {
     props: ['props'],
-    template: '<div class="card" data-name="AnonFn"><div class="header blue"> <span class="scnd">function</span> ' +
+    template: '<div class="card" ><div class="header blue"> <span class="scnd">function</span> ' +
     '<div v-for="p in props.params" class=" grey header card"> {{ p.name }} </div>' +
     '</div>' +
     '<div class="header amber">' +
@@ -102,7 +102,7 @@ Vue.component('NewExpression', {
     props: ['props'],
     template: '<div>' +
     '<component is="props.callee.type" v-if="this.isME()" :props="props.callee.object"/>' +
-    '<div class="header card amber" :class="{chain: this.isME()}" :data-name="this.getName()"><span class="scnd">new </span> {{ this.getName() }}' +
+    '<div class="header card amber" :class="{chain: this.isME()}" ><span class="scnd">new </span> {{ this.getName() }}' +
     '<component :is="a.type" v-for="a in props.arguments" :props="a"/>' +
     '</div>' +
     '</div>',
@@ -142,7 +142,7 @@ Vue.component('LogicalExpression', {
 
 Vue.component('ConditionalExpression', {
     props: ['props'],
-    template: '<div class="header card purple">' +
+    template: '<div class="header card brown">' +
     '<component :is="props.test.type" :props="props.test"/>' +
     '<div class="infix">' +
     ' <div class="line"></div>' +
@@ -170,14 +170,14 @@ Vue.component('AssignmentExpression', {
 
 Vue.component('ForStatement', {
     props: ['props'],
-    template: '<div class="card"><div class="header blue">for' +
+    template: '<div class="card"><div class="header brown">for' +
     '<component :is="props.init.type" :props="props.init"/>' +
     ' <div class="line"></div>' +
     '<component :is="props.test.type" :props="props.test"/>' +
     ' <div class="line"></div>' +
     '<component :is="props.update.type" :props="props.update"/>' +
     '</div>' +
-    '<div class="header amber">' +
+    '<div class="header orange">' +
     '<BlockStatement :props="props.body"/>' +
     '</div>' +
     '</div>'
@@ -185,14 +185,14 @@ Vue.component('ForStatement', {
 
 Vue.component('ReturnStatement', {
     props: ['props'],
-    template: '<div class=" header card grey" data-name="Return"> return ' +
+    template: '<div class=" header card grey" > return ' +
     '<component :is="props.argument.type" :props="props.argument"/>' +
     '</div>'
 });
 
 Vue.component('ForInStatement', {
     props: ['props'],
-    template: '<div class="card" data-name="ForIn"><div class="header blue"> for' +
+    template: '<div class="card"><div class="header brown"> for' +
     '<component :is="props.left.type" :props="props.left"/>' +
     '<div class="infix">' +
     ' <div class="line"></div>' +
@@ -201,7 +201,7 @@ Vue.component('ForInStatement', {
     '</div>' +
     '<component :is="props.right.type" :props="props.right"/>' +
     '</div>' +
-    '<div class="header amber">' +
+    '<div class="header orange">' +
     '<BlockStatement :props="props.body"/>' +
     '</div>' +
     '</div>'
@@ -209,10 +209,10 @@ Vue.component('ForInStatement', {
 
 Vue.component('WhileStatement', {
     props: ['props'],
-    template: '<div class="card"><div class="header blue"> while' +
+    template: '<div class="card"><div class="header brown"> while' +
     '<component :is="props.test.type" :props="props.test"/>' +
     '</div>' +
-    '<div class="header amber">' +
+    '<div class="header orange">' +
     '<BlockStatement :props="props.body"/>' +
     '</div>' +
     '</div>'
@@ -221,15 +221,15 @@ Vue.component('WhileStatement', {
 Vue.component('IfStatement', {
     props: ['props', 'hasElse'],
     template: '<div class="card">' +
-    '<div class="header red"> <span v-if="hasElse">else </span> if' +
+    '<div class="header green"> <span v-if="hasElse">else </span> if' +
     '<component :is="props.test.type" :props="props.test"/>' +
     '</div>' +
-    '<div class="header amber">' +
+    '<div class="header cyan">' +
     '<component :is="props.consequent.type" :props="props.consequent"/>' +
     '</div>' +
     '<div v-if="props.alternate">' +
     '<IfStatement class="elseif" v-if="props.alternate.type == \'IfStatement\'" :props="props.alternate" :hasElse="true"/>' +
-    '<div v-else class="header red"> else' +
+    '<div v-else class="header green"> else' +
     '<component :is="props.alternate.type" :props="props.alternate"/>' +
     '</div>' +
     '</div>' +
