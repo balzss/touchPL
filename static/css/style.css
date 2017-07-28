@@ -1,5 +1,6 @@
 html {
     height: 100%;
+  overflow: hidden;
 }
 body {
   background: #e2e1e0;
@@ -9,10 +10,16 @@ body {
   overflow: hidden;
 }
 
+.instru {
+    text-align: center;
+    font-family: Inconsolata, monospace;
+    padding: 12px;
+    opacity: 0.4;
+}
+
 .phone {
-  margin: 16px;
-  width: 20vw;
-  height: 35vw;
+    width: 100%;
+    height: 100%;
   border-radius: 3px;
   background-color: #f5f5f5;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -66,15 +73,29 @@ main {
   padding-right: 7px;
 }
 
-.desktop {
+.wrapper-p {
+  margin: 16px;
+  margin-top: -60px;
+  width: 20vw;
+  height: 35vw;
+
+}
+
+.wrapper-d {
     flex: 1;
+    height: 35vw;
+  margin: 16px;
+  margin-top: -60px;
+}
+
+.desktop {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   background-color: white;
-  height: 35vw;
   border-radius: 3px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  margin: 16px;
   
 }
 
@@ -173,11 +194,13 @@ main {
     opacity: 0.8;
 }
 
-.sidebar > .side-item:hover {
+.sidebar .side-item:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transform: scale(1.03);
 }
-.sidebar > .side-item {
+.sidebar .side-item {
+    text-decoration: none;
+    color: inherit;
     text-transform: capitalize;
     text-align: center;
     background-color: rgba(255,255,255,0.1);
