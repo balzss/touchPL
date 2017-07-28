@@ -20,6 +20,7 @@ startTime();
 
 
 var editor = ace.edit("editor");
+editor.$blockScrolling = Infinity;
 editor.on("input", function () {
     try {
         app.$data.astBody = acorn.parse(editor.getValue());
