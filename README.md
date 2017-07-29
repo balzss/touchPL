@@ -1,31 +1,21 @@
-# touchPL
-Visual syntax optimized for displaying source code on handheld devices. Try it out [here](https://balzss.github.io/touchPL/).
+# tpl
 
-![Imgur](http://i.imgur.com/WAbkBOy.gif)
+> visual syntax optimized for displaying source code on handheld devices
 
-## Why?
-This is the first part of my work-in-progress touch based code editor/IDE. It's a visual syntax for JavaScript.
+## Build Setup
 
-The goal is a code editing environment where the creation and the manipulation of the code is done through a touchscreen on a vertically oriented device (usually smartphone).
+``` bash
+# install dependencies
+npm install
 
-The majority of this project only exists in conceptual form but I needed some feedback on the visual representation so I created [this demo sandbox](https://balzss.github.io/touchPL/).
+# serve with hot reload at localhost:8080
+npm run dev
 
-The syntax implements almost all the ES5 features with the exception of: debugger statement, labeled statement, exceptions, do while loop and sequence expression.
+# build for production with minification
+npm run build
 
-## How?
-The code transformation is done by parsing the js code to an abstract syntax tree (AST). I'm using [acorn](https://github.com/ternjs/acorn) to that but it should work fine with every [estree](https://github.com/estree/estree) compatible parser generator.
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
-The generated AST is a list of js objects wich is given to a [vue](https://github.com/vuejs/vue) app that I created custom components for to generate HTML based on the nodes. After that it's just the matter of CSS to have it displayed the way I want.
-
-If you want a more in depth view of the process you may consider checking out the source code.
-
-List of the libraries being used:
-- [ace editor](https://github.com/ajaxorg/ace) for the code editor on the demo page
-- [acorn](https://balzss.github.io/touchPL/) for the js to ast generation
-- [vue](https://github.com/vuejs/vue) for generation HTML from the AST
-- I also used quite extensively the [astexplorer.net](https://astexplorer.net/) to help me construct the AST -> HTML bit of the app
-
-## Other
-- If you have any idea, suggestion, request or critique please [open an issue](https://github.com/balzss/touchPL/issues)
-- You can also contact me at [balazs.saros@gmail.com](mailto:balazs.saros@gmail.com)
-- Licensed under the GPLv3
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
