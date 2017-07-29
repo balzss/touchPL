@@ -269,25 +269,48 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 1080px) {
-.devices {
-    flex-direction: column;
-}
-.container {
-    flex-direction: column;
-}
-.sidebar {
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    height: 32px;
-    background-color: #546E7A;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    color: #f5f5f5;
-    font-family: 'Open Sans', sans-serif;
+.screen-info{
+    display: none;
 }
 
+#luxbar {
+    visibility: hidden;
+}
 
+@media screen and (max-width: 860px) {
+
+    .devices {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #info {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    body, html {
+        overflow: scroll;
+        padding-top: 42px;
+    }
+    .wrapper-p {
+        width: 100%;
+        height: auto;
+        margin: 24px;
+    }
+    .wrapper-d{
+        margin: 24px;
+        width: 100%;
+        height: 60vh;
+        flex: 0;
+    }
+    .devices {
+        padding: 0;
+    }
+    #luxbar {
+        visibility: visible;
+    }
+    .screen-info{
+        display: block
+    }
 }
