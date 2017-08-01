@@ -57,7 +57,6 @@ body {
     position: relative;
     z-index: 100;
     -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
 }
 
 .screen::-webkit-scrollbar {
