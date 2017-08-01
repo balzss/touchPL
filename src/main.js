@@ -351,15 +351,15 @@ editor.setTheme("ace/theme/chrome");
 
 editor.getSession().setMode("ace/mode/javascript");
 editor.getSession().setUseWrapMode(true);
-editor.setValue(`for (var i = 1; i <= 20; i++) {
-    if (i % 15 == 0)
-        console.log("FizzBuzz");
-    else if (i % 3 == 0)
-        console.log("Fizz");
-    else if (i % 5 == 0)
-        console.log("Buzz");
-    else
-        console.log(i);
-}`, 1);
+editor.setValue(
+        'for (var i = 1; i <= 20; i++) {\n' +
+    'if (i % 15 == 0)\n' +
+        'console.log("FizzBuzz");\n' +
+    'else if (i % 3 == 0)\n' +
+        'console.log("Fizz");\n' +
+    'else if (i % 5 == 0)\n' +
+        'console.log("Buzz");\n' +
+    'else\n' +
+        'console.log(i);}', 1);
 editor.getSession().setUseWorker(false);
 editor.setHighlightActiveLine(false);
