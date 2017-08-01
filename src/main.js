@@ -351,8 +351,7 @@ editor.setTheme("ace/theme/chrome");
 
 editor.getSession().setMode("ace/mode/javascript");
 editor.getSession().setUseWrapMode(true);
-editor.setValue(
-'        for (var i = 1; i <= 20; i++) {\n' +
+editor.setValue('for (var i = 1; i <= 20; i++) {\n' +
 '    if (i % 15 == 0)\n' +
 '        console.log("FizzBuzz");\n' +
 '    else if (i % 3 == 0)\n' +
