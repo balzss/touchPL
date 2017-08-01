@@ -80,30 +80,28 @@
     </div>
     <div id="info"></div>
 <script>
-    var textWhy = `<h2>Why?</h2><p>
-    This is the first part of my work-in-progress touch based code editor/IDE. It's a visual syntax for JavaScript.</p>
-    <p>The goal is a code editing environment where the creation and the manipulation of the code is done through a touchscreen on a vertically oriented device (usually smartphone).</p>
-    <p>The majority of this project only exists in conceptual form but I needed some feedback on the visual representation so I created this demo sandbox.
-    <p>The syntax implements almost all the ES5 features with the exception of: debugger statement, labeled statement, exceptions, do while loop and sequence expression.
-    <p>Please consider trying it out and giving your thougths, feedback, ideas or critiques <a href="https://github.com/balzss/touchPL/issues">here</a>.</p>`;
+    var textWhy = '<h2>Why?</h2><p>' +
+    'This is the first part of my work-in-progress touch based code editor/IDE. It's a visual syntax for JavaScript.</p>' +
+    '<p>The goal is a code editing environment where the creation and the manipulation of the code is done through a touchscreen on a vertically oriented device (usually smartphone).</p>' +
+    '<p>The majority of this project only exists in conceptual form but I needed some feedback on the visual representation so I created this demo sandbox.' +
+    '<p>The syntax implements almost all the ES5 features with the exception of: debugger statement, labeled statement, exceptions, do while loop and sequence expression.' +
+    '<p>Please consider trying it out and giving your thougths, feedback, ideas or critiques <a href="https://github.com/balzss/touchPL/issues">here</a>.</p>';
     
-    var textHow = `<h2>How?</h2><p>
-    The code transformation is done by parsing the js code to an abstract syntax tree (AST). I'm using <a href="https://github.com/ternjs/acorn">acorn</a> for that but it should work fine with every <a href="#">estree</a> compatible parser.</p>
-    <p>The generated AST is a list of js objects wich is given to a <a href="https://github.com/vuejs/vue">vue</a> app that I created custom components for to generate HTML based on the nodes. After that it was just the matter of CSS to display it the way I wanted.</p>
-    <p>If you want a more in depth view of the process you may consider checking out the <a href="#">source code</a> on github. </p>
-    <p>List of the libraries being used: <ul>
-    <li><a href="https://github.com/ajaxorg/ace">ace editor</a> for the code editor on the demo page</li>
-    <li><a href="https://github.com/ternjs/acorn">acorn</a> for the js to ast generation</li>
-    <li><a href="https://github.com/vuejs/vue">vue</a> for generation HTML from the AST</li>
-    <li>I also used quite extensively the <a href="https://astexplorer.net/">astexplorer.net</a> to help me construct the AST -> HTML bit of the app</li>
-    </ul></p>`;
+    var textHow = '<h2>How?</h2><p>' +
+    'The code transformation is done by parsing the js code to an abstract syntax tree (AST). I'm using <a href="https://github.com/ternjs/acorn">acorn</a> for that but it should work fine with every <a href="#">estree</a> compatible parser.</p>' +
+    '<p>The generated AST is a list of js objects wich is given to a <a href="https://github.com/vuejs/vue">vue</a> app that I created custom components for to generate HTML based on the nodes. After that it was just the matter of CSS to display it the way I wanted.</p>' +
+    '<p>If you want a more in depth view of the process you may consider checking out the <a href="#">source code</a> on github. </p>' +
+    '<p>List of the libraries being used: <ul>' +
+    '<li><a href="https://github.com/ajaxorg/ace">ace editor</a> for the code editor on the demo page</li>' +
+    '<li><a href="https://github.com/ternjs/acorn">acorn</a> for the js to ast generation</li>' +
+    '<li><a href="https://github.com/vuejs/vue">vue</a> for generation HTML from the AST</li>' +
+    '<li>I also used quite extensively the <a href="https://astexplorer.net/">astexplorer.net</a> to help me construct the AST -> HTML bit of the app</li>' +
+    '</ul></p>';
     
     function slide(text) {
         document.getElementById('devices').style.transform = "translateX(-100%)";
         var info = document.getElementById('info');
-        info.innerHTML = `
-    <h2 class="info-title" onclick="back()"><i class="material-icons" style="font-size: 16px; padding: 14px 4px 4px 4px;">arrow_back</i>Back to the demo</h2>
-    ` + text;
+        info.innerHTML = ' <h2 class="info-title" onclick="back()"><i class="material-icons" style="font-size: 16px; padding: 14px 4px 4px 4px;">arrow_back</i>Back to the demo</h2> ' + text;
         info.style.transform = "translateX(0)";
     }
     
